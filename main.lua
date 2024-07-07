@@ -271,7 +271,7 @@ RegisterCommand('removecustomweapon', function()
 end)
 
 
-----
+-- Ref: https://github.com/aaron1a12/wild/blob/9235aaa39696691ff26977ff1d2c18fe67971ef5/wild-core/client/cl_weaponWheel.lua#L6
 
 local bQuickSelectOpen = false
 local currentWheel = -1
