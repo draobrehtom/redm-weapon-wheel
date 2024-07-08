@@ -6,5 +6,10 @@ client_scripts {
     'main.lua',
 }
 
+ui_page 'index.html'
+files {
+    'index.html',
+}
+
 lua54 'yes'
 author 'draobrehtom'
