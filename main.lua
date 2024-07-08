@@ -117,9 +117,6 @@ function DrawText(text, x, y, fontscale, fontsize, r, g, b, alpha, textcentred, 
 end
 
 function tick()
-    -- Main loop to draw the sprite and handle key presses
-    local _offsetSize = 0.0001
-
     while screenAspectRatio == nil do
         Wait(0)
         print('Waiting for aspect ratio')
@@ -161,6 +158,7 @@ function tick()
 
 
     if debug then
+        local _offsetSize = 0.0001
         local spriteX = wheel[debugSpriteIndex].x
         local spriteY = wheel[debugSpriteIndex].y
         local spriteSize = wheel[debugSpriteIndex].size
@@ -254,23 +252,23 @@ end)
 
 -- Test commands
 
-RegisterCommand('givecustomweapon', function()
-    local attachPoint = 0
-    RemoveWeaponFromPed(PlayerPedId(), `weapon_shotgun_pump`, true, 0)
-    GiveWeaponToPed_2(PlayerPedId(), `weapon_shotgun_pump`, 12, true, true, attachPoint, false, 0.5, 1.0, 752097756, false, 0, false)
+-- RegisterCommand('givecustomweapon', function()
+--     local attachPoint = 0
+--     RemoveWeaponFromPed(PlayerPedId(), `weapon_shotgun_pump`, true, 0)
+--     GiveWeaponToPed_2(PlayerPedId(), `weapon_shotgun_pump`, 12, true, true, attachPoint, false, 0.5, 1.0, 752097756, false, 0, false)
 
-    exports[GetCurrentResourceName()]:setWeaponWheelIcon('longarm_shoulder', {
-        'inventory_items', 'weapon_shotgun_pump',
-    })
-end)
+--     exports[GetCurrentResourceName()]:setWeaponWheelIcon('longarm_shoulder', {
+--         'inventory_items', 'weapon_shotgun_pump',
+--     })
+-- end)
 
-RegisterCommand('removecustomweapon', function()
-    local attachPoint = 0
-    RemoveWeaponFromPed(PlayerPedId(), `weapon_shotgun_pump`, true, 0)
-    exports[GetCurrentResourceName()]:resetWeaponWheelIcon('longarm_shoulder')
-end)
+-- RegisterCommand('removecustomweapon', function()
+--     local attachPoint = 0
+--     RemoveWeaponFromPed(PlayerPedId(), `weapon_shotgun_pump`, true, 0)
+--     exports[GetCurrentResourceName()]:resetWeaponWheelIcon('longarm_shoulder')
+-- end)
 
-
+-- Handle weapon wheel detection
 -- Ref: https://github.com/aaron1a12/wild/blob/9235aaa39696691ff26977ff1d2c18fe67971ef5/wild-core/client/cl_weaponWheel.lua#L6
 
 local bQuickSelectOpen = false
