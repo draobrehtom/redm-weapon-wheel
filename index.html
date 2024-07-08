@@ -1,0 +1,37 @@
+<script>
+    // Init screen resolution 
+    fetch('https://' + GetParentResourceName() + '/screenResolution', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+            width: screen.width,
+            height: screen.height,
+        })
+	});
+
+    // Detect screen resolution changes
+    let previousWidth = screen.width;
+    let previousHeight = screen.height;
+    window.addEventListener('resize', () => {
+        const currentWidth = screen.width;
+        const currentHeight = screen.height;
+
+        if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
+            previousWidth = currentWidth;
+            previousHeight = currentHeight;
+
+            fetch('https://' + GetParentResourceName() + '/screenResolution', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    width: currentWidth,
+                    height: currentHeight,
+                })
+            });
+        }
+    });
+</script>
