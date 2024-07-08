@@ -1,17 +1,25 @@
 # Custom Weapon Wheel Script
 
-This script is designed to manage a custom weapon wheel for a game, allowing for dynamic adjustments based on screen resolution and aspect ratio. The script supports different weapon slots and automatically adjusts the position and size of weapon icons.
+This script is designed to manage weapon wheel for RedM in runtime. 
+
+- [x] You can add custom weapon icons without replacing the original ones.
+- [ ] You can set custom weapon name
+- [ ] You can set custom weapon stats
+
+This script is part of research and development of custom weapons in RedM:
+
+* **Research**: [Custom Weapon Research](https://forum.cfx.re/t/weapon-magazine-size-reload-speed-and-fire-rate-modifying/5245550/6?u=draobrehtom)
 
 ## Supported aspect ratios:
 
-- 1920/1080 = 1.77
+- 1920/1080 = **1.77**
 - 1760/990 = 1.77
-- 1680/1050 = 1.6
+- 1680/1050 = **1.6**
 - 1600/900 = 1.6
-- 1280/1024 = 1.25
+- 1280/1024 = **1.25**
 - 1366/768 = 1.77
 - 1280/720 = 1.77
-- 1024/768 = 1.33
+- 1024/768 = **1.33**
 
 
 | Original Icon         | Custom Icon          |
@@ -27,7 +35,7 @@ You can set a custom weapon icon for a specific slot using the `setWeaponWheelIc
 #### Example
 
 ```lua
--- Set a custom weapon icon for the 'sidearms' slot
+-- Set a custom weapon icon for the 'sidearms' slot (texture dict 'inventory_items', texture name 'weapon_sniperrifle_carcano')
 exports['redm-weapon-wheel']:setWeaponWheelIcon('sidearms', {'inventory_items', 'weapon_sniperrifle_carcano'})
 
 -- Set a custom weapon icon for the 'longarm_shoulder' slot
@@ -43,9 +51,9 @@ You can reset the custom weapon icon for a specific slot using the resetWeaponWh
 
 #### Example
 ```lua
-  -- Reset the custom weapon icon for the 'sidearms' slot
-  exports['redm-weapon-wheel']:resetWeaponWheelIcon('sidearms')
+-- Reset the custom weapon icon for the 'sidearms' slot
+exports['redm-weapon-wheel']:resetWeaponWheelIcon('sidearms')
 
-  -- Reset the custom weapon icon for the 'longarm_shoulder' slot
-  exports['redm-weapon-wheel']:resetWeaponWheelIcon('longarm_shoulder')
+-- Reset the custom weapon icon for the 'longarm_shoulder' slot
+exports['redm-weapon-wheel']:resetWeaponWheelIcon('longarm_shoulder')
 ```
